@@ -1,7 +1,7 @@
 # PayMIR API for RUB
 # Deposit:
 
-To deposit RUB through PayMIR a user of **PayMIR** partner receives an invoice with their unique ID (cliendID) and pays on their bank.
+To deposit RUB through **PayMIR** a user of a **PayMIR** partner receives an invoice with their unique ID (cliendID) and pays on their bank.
 
 * Access Point: https://dev.paymir.io/paymir/api/ajaxinvoicing/
 
@@ -28,7 +28,7 @@ Error: | {   result: false,   description: ```error message```}
 
 # Withdrawal:
 
-To withdraw RUB a user of **PayMIR** partner sends to **PayMIR** their bank details.
+To withdraw RUB a user of a **PayMIR** partner sends to **PayMIR** their bank details.
 
 * Access Point https://dev.paymir.io/paymir/api/ajaxwithdrawal/
 
