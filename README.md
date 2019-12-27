@@ -12,7 +12,7 @@ Request type: **POST**
 Key | Type | Description
 ----- | ----- | -----
 apiKey | string | Partner’s PayMIR API Key
-clientID | string | The identifier of your end-user on your platform.
+clientID | string | The identifier of your end-user on your platform (partner's platform).
 currency | string | ISO_4217 Currency code
 amount | decimal | Invoice amount
 hash | string | md5(implode('', [clientID, currency, amount, secretKey]));
