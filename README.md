@@ -1,7 +1,7 @@
 # PayMIR API for RUB
 # Deposit:
 
-To deposit RUB through **PayMIR** a user of a **PayMIR** partner receives an invoice with their unique ID (cliendID) and pays on their bank.
+To deposit RUB through **PayMIR** a user of a **PayMIR** partner receives an invoice with their unique ID (cliendID) and pays in their bank.
 
 * Access Point: https://dev.paymir.io/paymir/api/ajaxinvoicing/
 
