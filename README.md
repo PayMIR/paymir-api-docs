@@ -11,14 +11,14 @@ Request type: **POST**
 
 Key | Type | Description
 ----- | ----- | -----
-apiKey | string | Partner’s PayMIR API Key
+apiKey | string | Partner's PayMIR API Key
 clientID | string | The identifier of your end-user on your platform (partner's platform).
 currency | string | ISO_4217 Currency code
 cptName | string | Client First Name and Last Name
 amount | decimal | Invoice amount
 hash | string | md5(implode('', [clientID, currency, amount, secretKey]));
 
-**secretKey** - Partnerr`s secret
+**secretKey** - Partner's secret
 
 **Response:**
 
@@ -47,7 +47,7 @@ bankAccount | string | The bank account of the client’s bank
 cptName | string | Client First Name and Last Name
 hash | string | md5(implode('', [currency, amount, BIK, bankAccount, secretKey]));
 
-**secretKey** - Partner’s secret
+**secretKey** - Partner's secret
 
 **Response:**
 
@@ -70,7 +70,7 @@ apiKey | string | Partner’s PayMIR Api Key
 withdrawalID | string | Document ID
 hash | string | md5(implode('', [withdrawalID, secretKey]));
 
-**secretKey** - Partner’s secret
+**secretKey** - Partner's secret
 
 **Response:**
 
