@@ -17,7 +17,7 @@ currency | string | ISO_4217 Currency code
 amount | decimal | Invoice amount
 hash | string | md5(implode('', [clientID, currency, amount, secretKey]));
 
-**secretKey** - Partnerr`s secret
+**secretKey** - Partner`s secret
 
 **Response:**
 
@@ -25,6 +25,32 @@ Format | JSON
 ----- | -----
 Success: | {   result:true,   url: ```invoice link``` }
 Error: | {   result: false,   description: ```error message```}
+
+# Deposits history
+
+* Access Point: https://dev.paymir.io/paymir/api/ajaxdeposits/
+
+Request type: **GET**
+
+**Request Data:**
+
+Key | Type | Required | Description
+----- | ----- | ----- | -----
+apiKey | string | Yes | Partner’s PayMIR Api Key
+limit | decimal | No | Numbers per page <br> ``` min: 5, max:100, default:5```
+page | decimal | No | Page number <br> ```default: 0```
+hash | string | Yes | md5(implode('', [limit, page, secretKey]));
+
+**secretKey** - Partner`s secret
+
+**Response:**
+
+Format | JSON
+----- | -----
+Success: | {   result:true, data: <br> [ <br> {"type": "deposit", <br> "currency": ``` ISO_4217 Currency code ```, <br> "amount": ``` Invoice amount ```, <br>             "balance_amount": ``` balance amount ``` , <br> "payment_id": ``` payment number ``` , <br> "time": ``` transaction date ``` , <br> "status": ``` done, panding, canceled ``` , <br>            "clientid": ``` The identifier of your end-user on your platform. ``` }, <br> {...}, <br> {...} <br> ] <br> }
+Error: | {   result: false,   description: ```error message```}
+
+
 
 # Withdrawal:
 
