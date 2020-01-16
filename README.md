@@ -37,7 +37,7 @@ Request type: **GET**
 Key | Type | Required | Description
 ----- | ----- | ----- | -----
 apiKey | string | Yes | Partner’s PayMIR Api Key
-limit | decimal | No | Numbers per page <br> ``` min: 5, max:100, default:5```
+limit | decimal | No | Numbers per page <br> ``` min:5, max:100, default:5```
 page | decimal | No | Page number <br> ```default: 0```
 hash | string | Yes | md5(implode('', [limit, page, secretKey]));
 
