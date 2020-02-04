@@ -51,6 +51,18 @@ Format | JSON
 Success: | {   result:true, data: <br> [ <br> {"type": "deposit", <br> "currency": ``` ISO_4217 Currency code ```, <br> "amount": ``` Amount specified in the invoice ```, <br>             "balance_amount": ``` Actual amount deposited on the bank account ``` , <br> "payment_id": ``` payment number ``` , <br> "time": ``` transaction date ``` , <br> "status": ``` done, pending, canceled ``` , <br>            "clientid": ``` The identifier of your end-user on your platform. ``` }, <br> {...}, <br> {...} <br> ] <br> }
 Error: | {   result: false,   description: ```error message```}
 
+# Webhooks
+
+On the API page in your account, enter the callback URL where real-time information on your deposits will be recived. <br> 
+_If you want more security also provide us a Secret Key hash of hook signature (if you have a unique signature verification implemented)_
+
+Request type: **POST**
+
+Key | Value
+---- | -----
+content-type: | application/json
+body: | {"type": "deposit", <br>"currency": ISO_4217 Currency code, <br>"amount": Amount specified in the invoice, <br>"balance_amount": Actual amount deposited on the bank account , <br>"payment_id": payment number , <br>"time": transaction date , <br>"status": done, pending, canceled , <br>"clientid": The identifier of your end-user on your platform., <br>"hash": md5(implode('', array( "type", "currency", "amount", "time", "Secret Key hash of hook signature"))))} <br>
+
 # Withdrawal:
 
 To withdraw RUB a user of a **PayMIR** partner sends to **PayMIR** their bank details.
