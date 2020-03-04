@@ -65,8 +65,7 @@ body: | {"type": "deposit", <br>"currency": ISO_4217 Currency code, <br>"amount"
 
 # Withdrawal:
 
-An available method should be determined to use withdrawals. As a result you will get a list of available methods of withdrawal. </br>
-First you must select avalible withdraw method.
+An available method should be determined to use withdrawals. As a result you will get a list of available methods of withdrawal.
 
 * Access Point https://dev.paymir.io/paymir/api/ajaxpayoutprerequest/
 
@@ -124,6 +123,8 @@ Responce example with list of withdraw methods
     ]
 } 
 ```
+
+You must select avalible withdraw method.
 
 To withdraw funds a user of a **PayMIR** partner sends to **PayMIR** their bank or crypto details
 
