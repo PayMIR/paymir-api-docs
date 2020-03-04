@@ -86,7 +86,7 @@ Responce example with list of withdraw methods
     "result": true,
     "methods": [
         {
-            "name": "RUB_BANK_TRANSFER",
+            "name": "fiat_wire_lp_3",
             "required_fields": [
                 "apiKey",
                 "currency",
@@ -104,7 +104,7 @@ Responce example with list of withdraw methods
             "anti_fraud_percent": "30.00"
         },
         {
-            "name": "RUB_BANK_CARD",
+            "name": "fiat_card_lp_1",
             "required_fields": [
                 "apiKey",
                 "currency",
