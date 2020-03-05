@@ -65,7 +65,68 @@ body: | {"type": "deposit", <br>"currency": ISO_4217 Currency code, <br>"amount"
 
 # Withdrawal:
 
-To withdraw RUB a user of a **PayMIR** partner sends to **PayMIR** their bank details.
+An available method should be determined to use withdrawals. As a result you will get a list of available methods of withdrawal.
+
+* Access Point https://dev.paymir.io/paymir/api/ajaxpayoutprerequest/
+
+Request type: **GET**
+
+**Request Data:**
+
+Key | Type | Description
+----- | ----- | -----
+apiKey | string | Partner’s PayMIR API Key
+currency | string | ISO_4217 Currency code
+hash | string | md5(implode('', [currency, secretKey]));
+
+Responce example with list of withdraw methods
+
+```
+ {
+    "result": true,
+    "methods": [
+        {
+            "name": "fiat_wire_lp_3",
+            "required_fields": [
+                "apiKey",
+                "currency",
+                "amount",
+                "method",
+                "cptName",
+                "BIK",
+                "bankAccount",
+                "hash"
+            ],
+            "min_usd_fee": "0.00",
+            "fixed_usd_fee": "100.000000000000",
+            "percent_fee": "4.10",
+            "min_amount_usd": "5000.0000",
+            "anti_fraud_percent": "30.00"
+        },
+        {
+            "name": "fiat_card_lp_1",
+            "required_fields": [
+                "apiKey",
+                "currency",
+                "amount",
+                "method",
+                "cptName",
+                "cardNumber",
+                "hash"
+            ],
+            "min_usd_fee": "0.00",
+            "fixed_usd_fee": "100.000000000000",
+            "percent_fee": "25.00",
+            "min_amount_usd": "0.0000",
+            "anti_fraud_percent": "30.00"
+        }
+    ]
+} 
+```
+
+You must select avalible withdraw method.
+
+To withdraw funds a user of a **PayMIR** partner sends to **PayMIR** their bank or crypto details
 
 * Access Point https://dev.paymir.io/paymir/api/ajaxwithdrawal/
 
@@ -78,10 +139,13 @@ Key | Type | Description
 apiKey | string | Partner’s PayMIR API Key
 currency | string | ISO_4217 Currency code
 amount | decimal | Invoice amount
+method | string | Method ``` name ```  from Pre-request response
 BIK | string | BIK of client’s bank
 bankAccount | string | The bank account of the client’s bank
 cptName | string | Client First Name and Last Name
-hash | string | md5(implode('', [currency, amount, BIK, bankAccount, secretKey]));
+cryptoAddress | string | Your wallet Address (for cryptocurrency)
+cardNumber | string | Number of your Visa/MasterCard Bank card
+hash | string | md5(implode('', [currency, amount, method, BIK, bankAccount, cryptoAddress, cardNumber, secretKey]));
 
 **secretKey** - Partner's secret
 
