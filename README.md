@@ -18,7 +18,9 @@ cptName | string | Client First Name and Last Name
 amount | decimal | Invoice amount
 hash | string | md5(implode('', [clientID, currency, amount, secretKey]));
 
-**secretKey** - Partner's secret
+
+**secretKey** - Partner`s secret
+
 
 **Response:**
 
@@ -48,6 +50,7 @@ hash | string | Yes | md5(implode('', [limit, page, secretKey]));
 
 Format | JSON
 ----- | -----
+
 Success: | {   result:true, data: <br> [ <br> {"type": "deposit", <br> "currency": ``` ISO_4217 Currency code ```, <br> "amount": ``` Amount specified in the invoice ```, <br>             "balance_amount": ``` Actual amount deposited on the bank account ``` , <br> "payment_id": ``` payment number ``` , <br> "time": ``` transaction date ``` , <br> "status": ``` done, pending, canceled ``` , <br>            "clientid": ``` The identifier of your end-user on your platform. ``` }, <br> {...}, <br> {...} <br> ] <br> }
 Error: | {   result: false,   description: ```error message```}
 
@@ -62,6 +65,7 @@ Key | Value
 ---- | -----
 content-type: | application/json
 body: | {"type": "deposit", <br>"currency": ISO_4217 Currency code, <br>"amount": Amount specified in the invoice, <br>"balance_amount": Actual amount deposited on the bank account , <br>"payment_id": payment number , <br>"time": transaction date , <br>"status": done, pending, canceled , <br>"clientid": The identifier of your end-user on your platform., <br>"hash": md5(implode('', array( "type", "currency", "amount", "time", "Secret Key hash of hook signature"))))} <br>
+
 
 # Withdrawal:
 
