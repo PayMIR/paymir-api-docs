@@ -30,7 +30,8 @@ Success: | {   result:true,   url: ```invoice link``` }
 Error: | {   result: false,   description: ```error message```}
 
 # TxID
-For exchange RUB pay revenue to USDT send as a blockchain (BTC/ETH) TxId of your payment to end-user
+
+To get RUB deposit exchanged to USDT send us ERC20 Tether TxID of end-user account replenishment.
 
 * Access Point: https://dev.paymir.io/paymir/api/ajaxtxreporting
 
@@ -38,6 +39,7 @@ Request type: **POST**
 
 Key | Type | Description
 ----- | ----- | -----
+apiKey | string | Partner's PayMIR API Key
 paymentId | string | ``` paymentId ``` from webhook
 address | string | ``` USDT address of end-user ```
 txId| string | blockchain (BTC/ETH) TxId
