@@ -29,6 +29,19 @@ Format | JSON
 Success: | {   result:true,   url: ```invoice link``` }
 Error: | {   result: false,   description: ```error message```}
 
+# TxID
+For exchange RUB pay revenue to USDT send as a blockchain (BTC/ETH) TxId of your payment to end-user
+
+* Access Point: https://dev.paymir.io/paymir/api/.....
+
+Request type: **POST**
+
+Key | Type | Description
+----- | ----- | -----
+clientID | string | The identifier of your end-user on your platform (partner's platform).
+TxId| string | blockchain (BTC/ETH) TxId
+hash | string | md5(implode('', [clientID,TxId, secretKey]));
+
 # Deposits history
 
 * Access Point: https://dev.paymir.io/paymir/api/ajaxdeposits/
