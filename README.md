@@ -51,7 +51,7 @@ hash | string | md5(implode('', [paymentId,address,txId, secretKey]));
 
 Format | JSON
 ----- | -----
-Success: | {   result:true,   totalAmount: ```USDT Amout ``` }
+Success: | {   result:true,   totalAmount: ```USDT Amount ``` }
 Error: | {   result: false,   description: ```error message```}
 
 # Deposits history
