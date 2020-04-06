@@ -16,7 +16,7 @@ clientID | string | The identifier of your end-user on your platform (partner's 
 currency | string | ISO_4217 Currency code
 cptName | string | Client First Name and Last Name
 amount | decimal | Invoice amount
-additionData[address] | string |  = ``` USDT address ```
+additionData[address] | string |  ``` USDT address ```
 hash | string | md5(implode('', [clientID, currency, amount, secretKey]));
 
 
