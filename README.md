@@ -42,7 +42,7 @@ Key | Type | Description
 apiKey | string | Partner's PayMIR API Key
 paymentId | string | ``` paymentId ``` from webhook
 address | string | ``` USDT address of end-user ```
-txId| string | blockchain (BTC/ETH) TxId
+txId| string |  ERC20 Tether TxID
 hash | string | md5(implode('', [paymentId,address,txId, secretKey]));
 
 **secretKey** - Partner`s secret
