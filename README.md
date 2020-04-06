@@ -32,15 +32,18 @@ Error: | {   result: false,   description: ```error message```}
 # TxID
 For exchange RUB pay revenue to USDT send as a blockchain (BTC/ETH) TxId of your payment to end-user
 
-* Access Point: https://dev.paymir.io/paymir/api/.....
+* Access Point: https://dev.paymir.io/paymir/api/ajaxtxreporting
 
 Request type: **POST**
 
 Key | Type | Description
 ----- | ----- | -----
-clientID | string | The identifier of your end-user on your platform (partner's platform).
-TxId| string | blockchain (BTC/ETH) TxId
-hash | string | md5(implode('', [clientID,TxId, secretKey]));
+paymentId | string | ``` paymentId ``` from webhook
+address | string | ``` USDT address of end-user ```
+txId| string | blockchain (BTC/ETH) TxId
+hash | string | md5(implode('', [paymentId,address,txId, secretKey]));
+
+**secretKey** - Partner`s secret
 
 # Deposits history
 
