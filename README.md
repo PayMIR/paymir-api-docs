@@ -29,6 +29,22 @@ Format | JSON
 Success: | {   result:true,   url: ```invoice link``` }
 Error: | {   result: false,   description: ```error message```}
 
+# Paymir USDT/RUB rate
+
+To get Paymir USDT/RUB rate and fee
+
+* Access Point: http://dev.paymir.io/paymir/api/ajaxkucoinrates/
+
+Request type: **POST**
+
+Key | Type | Description
+----- | ----- | -----
+apiKey | string | Partner's PayMIR API Key
+amount | string | RUB amount
+hash | string | md5(implode('', [amount, secretKey]));
+
+**secretKey** - Partner`s secret
+
 # TxID
 
 To get RUB deposit exchanged to USDT (deposit "status" = ``` tx_wait ``` ) send us ERC20 Tether TxID of end-user account replenishment.
