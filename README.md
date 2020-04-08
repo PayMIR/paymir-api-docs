@@ -45,6 +45,13 @@ hash | string | md5(implode('', [amount, secretKey]));
 
 **secretKey** - Partner`s secret
 
+**Response:**
+
+Format | JSON
+----- | -----
+Success: | {"result": true, <br> "usdtRate": ``` Paymir USDT/RUB rate ```, <br> "feePercent": ``` Paymir fee ```}
+Error: | {   result: false,   description: ```error message```}
+
 # TxID
 
 To get RUB deposit exchanged to USDT (deposit "status" = ``` tx_wait ``` ) send us ERC20 Tether TxID of end-user account replenishment.
