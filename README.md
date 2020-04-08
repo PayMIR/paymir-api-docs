@@ -49,7 +49,7 @@ hash | string | md5(implode('', [amount, secretKey]));
 
 Format | JSON
 ----- | -----
-Success: | {"result": true, <br> "usdtRate": ``` Paymir USDT/RUB rate ```, <br> "feePercent": ``` Paymir fee ```}
+Success: | {"result": true, <br> "usdtRate": ``` Paymir USDT/RUB rate ```, <br> "feePercent": ``` Paymir fee ```, <br> "calculatedUsdtAmount": calculated USDT amount}
 Error: | {   result: false,   description: ```error message```}
 
 # TxID
