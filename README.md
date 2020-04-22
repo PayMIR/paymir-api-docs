@@ -26,7 +26,7 @@ hash | string | md5(implode('', [clientID, currency, amount, secretKey]));
 
 Format | JSON
 ----- | -----
-Success: | {   result:true, <br> url: ```invoice link```, <br> invoiceData: ```Name: ... Acc RUB: ... Beneficiary Address: ... Bank:... SWIFT: .... Payment details: ...``` <br>}
+Success: | {   result:true, <br> url: ```invoice link```, <br> invoiceData: Beneficiary Info to make invoice <br> (```Name: ... Acc RUB: ... Beneficiary Address: ... Bank:... SWIFT: .... Payment details: ...```) <br>}
 Error: | {   result: false,   description: ```error message```}
 
 # TxID
