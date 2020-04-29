@@ -27,7 +27,7 @@ Error: | {   result: false,   description: ```error message```}
 
 # Exchange:
 
-To exchange CMN to BTC  
+To exchange CMN to BTC notify us with TxId  
 
 * Access Point: https://dev.paymir.io/paymir/api/ajaxcmntxreporting
 
