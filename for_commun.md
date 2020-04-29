@@ -16,7 +16,7 @@ amount | decimal | CMN amount
 hash | string | md5(implode('', [amount, secretKey]));
 
 
-**secretKey** - Partner's secret you can get it in PayMIR's personal area
+**secretKey** - Partner's secret, you can get it on PayMIR's personal area
 
 **Response:**
 
