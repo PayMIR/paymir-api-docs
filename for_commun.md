@@ -22,5 +22,5 @@ hash | string | md5(implode('', [amount, secretKey]));
 
 Format | JSON
 ----- | -----
-Success: | {   result:true,    "inAmount": ``` CMN amont ``` ,   "rate": ``` BTC/CMN rate ``` ,    "outAmount": ``` BTC amount ``` ,   description: }
+Success: | {   result:true,    "inAmount": ``` CMN amount ``` ,   "rate": ``` BTC/CMN rate ``` ,    "outAmount": ``` BTC amount ``` ,   description: }
 Error: | {   result: false,   description: ```error message```}
