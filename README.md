@@ -7,6 +7,8 @@ To deposit RUB through **PayMIR** a user of a **PayMIR** partner receives an inv
 
 Request type: **POST**
 
+Content-Type: **multipart/form-data** 
+
 **Request Data:**
 
 Key | Type | Description
@@ -36,6 +38,8 @@ To get RUB deposit exchanged to USDT (deposit "status" = ``` tx_wait ``` ) send 
 * Access Point: https://dev.paymir.io/paymir/api/ajaxtxreporting
 
 Request type: **POST**
+
+Content-Type: **multipart/form-data** 
 
 Key | Type | Description
 ----- | ----- | -----
@@ -99,6 +103,8 @@ An available method should be determined to use withdrawals. As a result you wil
 
 Request type: **GET**
 
+Content-Type: **multipart/form-data** 
+
 **Request Data:**
 
 Key | Type | Description
@@ -159,6 +165,8 @@ To withdraw funds a user of a **PayMIR** partner sends to **PayMIR** their bank 
 * Access Point https://dev.paymir.io/paymir/api/ajaxwithdrawal/
 
 Request type: **POST**
+
+Content-Type: **multipart/form-data** 
 
 **Request Data:**
 
