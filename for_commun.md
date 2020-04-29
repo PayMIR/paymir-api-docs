@@ -7,6 +7,8 @@ To get preliminary BTC amount
 
 Request type: **POST**
 
+Content-Type: **multipart/form-data** 
+
 **Request Data:**
 
 Key | Type | Description
@@ -32,6 +34,8 @@ To exchange CMN to BTC notify us with TxId
 * Access Point: https://dev.paymir.io/paymir/api/ajaxcmntxreporting
 
 Request type: **POST**
+
+Content-Type: **multipart/form-data** 
 
 **Request Data:**
 
