@@ -53,8 +53,8 @@ Error: | {   result: false,   description: ```error message```}
 
 # Webhooks
 
-On the API page in your account, enter the callback URL where real-time information on your complete operations will be recived. <br> 
-_If you want more security also provide us a Secret Key hash of hook signature (if you have a unique signature verification implemented)_
+Provide your callback URL on the API page of the PayMIR personal area. The URL will be received successful transaction. <br> 
+_In case you need additional security, provide us with your Secret Key hash of the hook signature (if you have a unique signature verification implemented)._
 
 Request type: **POST**
 
