@@ -16,7 +16,7 @@ amount | decimal | CMN amount
 hash | string | md5(implode('', [amount, secretKey]));
 
 
-**secretKey** - Partner`s secret
+**secretKey** - Partner's secret you can get it in PayMIR's personal area
 
 **Response:**
 
@@ -61,7 +61,7 @@ Request type: **POST**
 Key | Value
 ---- | -----
 content-type: | application/json
-body: | {"type":"withdrawal", <br> "currency":"BTC" (ISO_4217 Currency code), <br> "amount": technical BTC amount, <br> "balance_amount":Actual BTC amount of exchange, <br> "payment_id":payment number, <br> "time":transaction date, <br> "status":"done", <br> "balance_currency":"BTC", <br> "clientid":null, <br> "CMNtx":id of CMN transaction, <br> "BTCtx": id of BTC transaction , <br> "hash":"hash": md5(implode('', array( "type", "currency", "amount", "time", "Secret Key hash of hook signature"))))}
+body: | {"type":"withdrawal", <br> "currency":"BTC" (ISO_4217 Currency code), <br> "amount": technical BTC amount, <br> "balance_amount": actual BTC amount of exchange, <br> "payment_id":payment number, <br> "time":transaction date, <br> "status":"done", <br> "balance_currency":"BTC", <br> "clientid":null, <br> "CMNtx":id of CMN transaction, <br> "BTCtx": id of BTC transaction , <br> "hash":"hash": md5(implode('', array( "type", "currency", "amount", "time", "Secret Key hash of hook signature"))))}
 
 
 
