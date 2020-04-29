@@ -38,7 +38,7 @@ Request type: **POST**
 Key | Type | Description
 ----- | ----- | -----
 apiKey | string | Partner's PayMIR API Key
-txId | decimal | CMN amount
+txId | string | Id of CMN transactoin
 hash | string | md5(implode('', [txId, secretKey]));
 
 
