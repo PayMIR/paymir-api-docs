@@ -1,7 +1,7 @@
 # PayMIR API for Commun
 # Calculate:
 
-To calculate BTC  
+To get preliminary BTC amount
 
 * Access Point: https://dev.paymir.io/paymir/api/ajaxcmncalculate
 
@@ -22,12 +22,12 @@ hash | string | md5(implode('', [amount, secretKey]));
 
 Format | JSON
 ----- | -----
-Success: | {   result:true,    "inAmount": ``` CMN amount ``` ,   "rate": ``` BTC/CMN rate ``` ,    "outAmount": ``` BTC amount ``` ,   description: }
+Success: | {   result:true,    "inAmount": ``` CMN amount ``` , "minAmount": ''' min limit BTC amount ``` ,  "rate": ``` BTC/CMN rate ``` ,    "outAmount": ``` BTC amount ``` ,   description: }
 Error: | {   result: false,   description: ```error message```}
 
 # Exchange:
 
-To exchaange CMN to BTC  
+To exchange CMN to BTC  
 
 * Access Point: https://dev.paymir.io/paymir/api/ajaxcmntxreporting
 
@@ -48,6 +48,6 @@ hash | string | md5(implode('', [txId, secretKey]));
 
 Format | JSON
 ----- | -----
-Success: | {    "result": true,    "inAmount": "804.0000",    "minAmount": "0.001",    "outAmount": "0.001007722306",    "fees": "0.000507576494",    "rate": "0.0000018847"}
+Success: | {    "result": true,    "inAmount": ``` CMN amount ```,    "minAmount": ``` min limit BTC amount ```,    "outAmount": ``` BTC amount ```,    "fees": ``` total excange fee ``` ,    "rate": ``` BTC/CMN rate ```}
 Error: | {   result: false,   description: ```error message```}
 
