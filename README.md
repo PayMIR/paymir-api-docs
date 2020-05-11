@@ -90,6 +90,24 @@ Key | Value
 content-type: | application/json
 body: | {"type": "deposit", <br>"currency": ISO_4217 Currency code, <br>"amount": Amount specified in the invoice, <br>"balance_amount": Actual amount deposited on the bank account , <br>"payment_id": payment number , <br>"time": transaction date , <br>"status": done, tx_wait, pending, canceled , <br>"clientid": The identifier of your end-user on your platform., <br> ``` "tx_address": USDT address of end-user, ```  <br> ``` "usdt_amount": calculate USDT balance Amount, ``` <br> ``` (For "status": tx_wait) ``` <br> "hash": md5(implode('', array( "type", "currency", "amount", "time", "Secret Key hash of hook signature"))))} <br>
 
+## Exchange:
+To get available excange currency pairs, rates and fees
+* Access Point https://dev.paymir.io/paymir/api/ajaxexchange/
+
+Request type: **GET**
+
+**Request Data:**
+
+Key | Type | Description
+----- | ----- | -----
+apiKey | string | Partner’s PayMIR Api Key
+
+**Response:**
+
+Format | JSON
+----- | -----
+Success: | {{"result": true,<br> "pairs": [<br>{<br>"pair": "CNY-USD",<br>"rate": "0.1389",<br>"fee": "0.25"<br>},<br>... ,<br>{<br>"pair": "USD-CNY",<br>"rate": "6.9845",<br>"fee": "0.25"<br>}<br>}
+Error: | {   result: false,   description: ```error message```}
 
 # Withdrawal:
 
