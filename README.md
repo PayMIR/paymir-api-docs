@@ -90,7 +90,7 @@ Key | Value
 content-type: | application/json
 body: | {"type": "deposit", <br>"currency": ISO_4217 Currency code, <br>"amount": Amount specified in the invoice, <br>"balance_amount": Actual amount deposited on the bank account , <br>"payment_id": payment number , <br>"time": transaction date , <br>"status": done, tx_wait, pending, canceled , <br>"clientid": The identifier of your end-user on your platform., <br> ``` "tx_address": USDT address of end-user, ```  <br> ``` "usdt_amount": calculate USDT balance Amount, ``` <br> ``` (For "status": tx_wait) ``` <br> "hash": md5(implode('', array( "type", "currency", "amount", "time", "Secret Key hash of hook signature"))))} <br>
 
-## Exchange:
+## Rates and fees:
 To get available excange currency pairs, rates and fees
 * Access Point https://dev.paymir.io/paymir/api/ajaxexchange/
 
@@ -108,6 +108,32 @@ Format | JSON
 ----- | -----
 Success: | {{"result": true,<br> "pairs": [<br>{<br>"pair": "CNY-USD",<br>"rate": "0.1389",<br>"fee": "0.25"<br>},<br>... ,<br>{<br>"pair": "USD-CNY",<br>"rate": "6.9845",<br>"fee": "0.25"<br>}<br>}
 Error: | {   result: false,   description: ```error message```}
+
+## Exchange:
+To exchange founds
+* Access Point: https://dev.paymir.io/paymir/api/ajaxexchange/
+
+Request type: **POST**
+
+**Request Data:**
+
+Key | Type | Description
+----- | ----- | -----
+apiKey | string | Partner's PayMIR API Key
+pair | string | Pair from previous request response
+amount | decimal | amount of out currency
+hash | string | md5(implode('', [pair, amount, secretKey]));
+
+
+**secretKey** - Partner`s secret
+
+**Response:**
+
+Format | JSON
+----- | -----
+Success: | {"result": true,<br>"conversion": {<br>"id": ``` conversion number ```, <br> "operationDate": "2020-05-08 16:19:55",<br>  "status": "done",<br>"fromAsset": ``` out currency ``` ,<br>"amountOut": ``` out amount ```,<br>"toAsset": ``` in currency ```,<br>"amountIn": ``` in amount ```,<br>"feeAsset": ``` fee currency ``` ,<br>"fee": ``` fee amount ```<br>   }<br>}
+Error: | {   result: false,   description: ```error message```}
+
 
 # Withdrawal:
 
