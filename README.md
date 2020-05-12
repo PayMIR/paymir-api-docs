@@ -41,6 +41,8 @@ Request type: **POST**
 
 Content-Type: **multipart/form-data**
 
+**Request Data:**
+
 Key | Type | Description
 ----- | ----- | -----
 apiKey | string | Partner's PayMIR API Key
