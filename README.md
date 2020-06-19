@@ -33,7 +33,7 @@ Error: | {   result: false,   description: ```error message```}
 
 # TxID
 
-To get RUB deposit exchanged to USDT (deposit "status" = ``` tx_wait ``` ) send us ERC20 Tether TxID of end-user account replenishment.
+To get RUB deposit exchanged to USDT (deposit "status" = ``` paid ``` ) send us ERC20 Tether TxID of end-user account replenishment.
 
 * Access Point: https://dev.paymir.io/paymir/api/ajaxtxreporting
 
@@ -81,7 +81,7 @@ hash | string | Yes | md5(implode('', [limit, page, secretKey]));
 
 Format | JSON
 ----- | -----
-Success: | {   result:true, data: <br> [ <br> {"type": "deposit", <br> "currency": ``` ISO_4217 Currency code ```, <br> "amount": ``` Amount specified in the invoice ```, <br>             "balance_amount": ``` Actual amount deposited on the bank account ``` , <br> "payment_id": ``` payment number ``` , <br> "time": ``` transaction date ``` , <br> "status": ``` done, pending, canceled ``` , <br>            "clientid": ``` The identifier of your end-user on your platform. ``` }, <br> {...}, <br> {...} <br> ] <br> }
+Success: | {   result:true, data: <br> [ <br> {"type": "deposit", <br> "currency": ``` ISO_4217 Currency code ```, <br> "amount": ``` Amount specified in the invoice ```, <br>             "balance_amount": ``` Actual amount deposited on the bank account ``` , <br> "payment_id": ``` payment number ``` , <br> "time": ``` transaction date ``` , <br> "status": ``` done, paid, pending, canceled ``` , <br>            "clientid": ``` The identifier of your end-user on your platform. ``` }, <br> {...}, <br> {...} <br> ] <br> }
 Error: | {   result: false,   description: ```error message```}
 
 # Webhooks
@@ -94,7 +94,7 @@ Request type: **POST**
 Key | Value
 ---- | -----
 content-type: | application/json
-body: | {"type": "deposit", <br>"currency": ISO_4217 Currency code, <br>"amount": Amount specified in the invoice, <br>"balance_amount": Actual amount deposited on the bank account , <br>"payment_id": payment number , <br>"time": transaction date , <br>"status": done, tx_wait, pending, canceled , <br>"clientid": The identifier of your end-user on your platform., <br> ``` "tx_address": USDT address of end-user, ```  <br> ``` "usdt_amount": calculate USDT balance Amount, ``` <br> ``` (For "status": tx_wait) ``` <br> "hash": md5(implode('', array( "type", "currency", "amount", "time", "Secret Key hash of hook signature"))))} <br>
+body: | {"type": "deposit", <br>"currency": ISO_4217 Currency code, <br>"amount": Amount specified in the invoice, <br>"balance_amount": Actual amount deposited on the bank account , <br>"payment_id": payment number , <br>"time": transaction date , <br>"status": done, paid, pending, canceled , <br>"clientid": The identifier of your end-user on your platform., <br> ``` "tx_address": USDT address of end-user, ```  <br> ``` "usdt_amount": calculate USDT balance Amount, ``` <br> ``` (For "status": paid) ``` <br> "hash": md5(implode('', array( "type", "currency", "amount", "time", "Secret Key hash of hook signature"))))} <br>
 
 ## Rates and fees:
 To get available excange currency pairs, rates and fees
