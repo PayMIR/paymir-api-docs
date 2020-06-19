@@ -26,7 +26,7 @@ hash | string | md5(implode('', [clientID, currency, amount, secretKey]));
 
 Format | JSON
 ----- | -----
-Success: | {   result:true, <br> url: ```invoice link```, <br> invoiceData: Beneficiary Info to make invoice <br> (```Name: ...; Acc RUB: ...; Beneficiary Address: ...; Bank:...; SWIFT: ....; Payment details: ..., Invoice amount: ...```) <br>}
+Success: | {   result:true, <br> url: ```invoice link```, <br> invoiceData:  <br> {Name: ..., <br> Acc RUB: ..., <br> Beneficiary Address: ..., <br> Bank:..., <br> SWIFT: ...., <br> Payment details: ..., <br> Invoice amount: ...} <br>}
 Error: | {   result: false,   description: ```error message```}
 
 # Paymir USDT/RUB rate
