@@ -31,6 +31,36 @@ Format | JSON
 Success: | {   result:true,   url: ```invoice link``` }
 Error: | {   result: false,   description: ```error message```}
 
+# Crypto Deposit:
+
+To deposit Cryptocurrency through **PayMIR** a user of a **PayMIR** partner receives a unique cryptoaddress.
+
+* Access Point: https://dev.paymir.io/paymir/api/ajaxcryptodeposit/
+
+Request type: **POST**
+
+Content-Type: **multipart/form-data**
+
+**Request Data:**
+
+Key | Type | Description
+----- | ----- | -----
+apiKey | string | Partner's PayMIR API Key
+currency | string | Currency code (BTC, ETH, USDT)
+amount | decimal | Invoice amount
+hash | string | md5(implode('', [currency, amount, secretKey]));
+
+
+**secretKey** - Partner`s secret
+
+**Response:**
+
+Format | JSON
+----- | -----
+Success: | {   result:true, paymentId: ``` operetion id in deposit history  ```,  address: ```cryptoaddress to deposit``` }
+Error: | {   result: false,   description: ```error message```}
+
+
 # TxID
 
 To get RUB deposit exchanged to USDT (deposit "status" = ``` paid ``` ) send us ERC20 Tether TxID of end-user account replenishment.
